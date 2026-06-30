@@ -189,3 +189,92 @@ margin-top:80px;
 .rank-card button:hover{
     background:#00ffbf;
 }
+.rank-page{
+    max-width:1100px;
+    margin:auto;
+    padding:80px 20px;
+}
+
+.rank-page h1{
+    text-align:center;
+    font-size:55px;
+}
+
+.rank-price{
+    text-align:center;
+    font-size:32px;
+    color:#00ffd5;
+    margin-bottom:50px;
+}
+
+.inventory h2{
+    margin:40px 0 20px;
+}
+
+.inventory-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:20px;
+}
+
+.item{
+    background:#1d2535;
+    border:2px solid #00ffd5;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.item:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 20px #00ffd5;
+}
+
+.item img{
+    width:64px;
+    height:64px;
+}
+
+.item p{
+    margin-top:15px;
+    font-weight:bold;
+}
+
+.item span{
+    color:#9fffe8;
+    font-size:14px;
+}
+
+.features{
+    margin-top:60px;
+}
+
+.features ul{
+    list-style:none;
+    padding:0;
+}
+
+.features li{
+    margin:12px 0;
+    font-size:18px;
+}
+
+.buy-btn{
+    width:100%;
+    margin-top:40px;
+    padding:18px;
+    border:none;
+    border-radius:12px;
+    background:#00d9a5;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.buy-btn:hover{
+    background:#00f5bc;
+    transform:scale(1.03);
+}
