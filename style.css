@@ -308,3 +308,23 @@ font-weight:bold;
 font-size:18px;
 
 }
+.store-card h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.store-card p{
+    font-size:18px;
+    color:#d6e3ea;
+}
+
+.store-card span{
+    margin-top:25px;
+    display:inline-block;
+    color:#00ffd5;
+    font-weight:700;
+}
+
+.store-card:hover h2{
+    color:#00ffd5;
+}
