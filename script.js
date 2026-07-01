@@ -1,84 +1,81 @@
-```javascript
-// Sayfa açılış animasyonu
+// Copy IP Button
 
-window.addEventListener("load",()=>{
+const copyButton = document.getElementById("copyIP");
 
-document.body.style.opacity="1";
+if(copyButton){
 
-});
+    copyButton.addEventListener("click", ()=>{
 
-document.body.style.opacity="0";
-document.body.style.transition="1s";
+        navigator.clipboard.writeText("mediewel.aternos.me");
 
+        copyButton.innerHTML="✅ IP Copied!";
 
+        setTimeout(()=>{
 
-// Kart Efekti
+            copyButton.innerHTML="Copy IP";
 
-const cards=document.querySelectorAll(".card");
+        },2000);
 
-cards.forEach(card=>{
-
-card.addEventListener("mousemove",(e)=>{
-
-const rect=card.getBoundingClientRect();
-
-const x=e.clientX-rect.left;
-const y=e.clientY-rect.top;
-
-card.style.background=
-`radial-gradient(circle at ${x}px ${y}px,
-rgba(57,255,182,.35),
-rgba(255,255,255,.08))`;
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.background="rgba(255,255,255,.08)";
-
-});
-
-});
-
-
-
-// Navbar Scroll
-
-window.addEventListener("scroll",()=>{
-
-const nav=document.querySelector("nav");
-
-if(window.scrollY>60){
-
-nav.style.background="rgba(0,0,0,.75)";
-
-}else{
-
-nav.style.background="rgba(0,0,0,.25)";
+    });
 
 }
 
+
+// Fake Server Status
+// Daha sonra gerçek API bağlayacağız.
+
+const players=document.getElementById("players");
+
+if(players){
+
+    players.innerHTML="🟢 Online<br>0 Players";
+
+}
+
+
+// Fade Animation
+
+const observer=new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+});
+
+document.querySelectorAll(".status-card,.news-card").forEach(el=>{
+
+    observer.observe(el);
+
 });
 
 
+// Smooth Scroll
 
-// Buton Animasyonu
+document.querySelectorAll("a").forEach(anchor=>{
 
-const buttons=document.querySelectorAll("button");
+    anchor.addEventListener("click",function(e){
 
-buttons.forEach(btn=>{
+        const href=this.getAttribute("href");
 
-btn.addEventListener("mouseenter",()=>{
+        if(href.startsWith("#")){
 
-btn.style.transform="scale(1.08)";
+            e.preventDefault();
+
+            document.querySelector(href).scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
+
+    });
 
 });
-
-btn.addEventListener("mouseleave",()=>{
-
-btn.style.transform="scale(1)";
-
-});
-
-});
-```
